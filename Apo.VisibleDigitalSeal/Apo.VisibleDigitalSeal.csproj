@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;netstandard2.0;net461</TargetFrameworks>
+		<Version>1.0</Version>
+		<RootNamespace>Apo.VisibleDigitalSeal</RootNamespace>
+		<AssemblyName>Apo.VisibleDigitalSeal</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Docs\**" />
+	  <Compile Remove="Models\ProofOfVaccination\**" />
+	  <EmbeddedResource Remove="Docs\**" />
+	  <EmbeddedResource Remove="Models\ProofOfVaccination\**" />
+	  <None Remove="Docs\**" />
+	  <None Remove="Models\ProofOfVaccination\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Template\ProofOfVaccinationV1CertificateTemplate.cshtml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Template\ProofOfVaccinationV1CertificateTemplate.cshtml">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="10.3.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="QRCoder" Version="1.4.1" />
+		<PackageReference Include="Stratumn.CanonicalJson" Version="0.0.8" />
+		<PackageReference Include="Select.HtmlToPdf.NetCore" Version="21.1.0" />
+	</ItemGroup>
+	
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+		<PackageReference Include="RazorEngine" Version="3.10.0" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+		<PackageReference Include="RazorEngine.NetCore" Version="2.2.6" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+		<PackageReference Include="RazorEngine.NetCore" Version="3.1.0" />
+	</ItemGroup>
+
+
+</Project>

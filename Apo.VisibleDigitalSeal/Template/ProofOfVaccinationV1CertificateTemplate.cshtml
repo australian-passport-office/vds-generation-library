@@ -1,0 +1,480 @@
+﻿@* 
+    ProofOfVaccinationV1CertificateTemplate.cshtml
+    Copyright (c) 2021, Commonwealth of Australia. vds.support@dfat.gov.au
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*@
+
+<html lang="en">
+<body>
+    <div id="first-page-header">
+        <img class="coat-of-arms" src="data:image/png;base64,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" />
+        <h1>SAMPLE International COVID-19 Vaccination Certificate</h1>
+        <table class="header-table">
+            <tr>
+                <td style="width: 25%;" class="padding-left-0 left">Proof of Vaccination</td>
+                <td style="width: 25%;" class="center">Issued by @Model.Vds.Data.Header.IssuingCountry</td>
+                <td style="width: 25%;" class="center">Version @Model.Vds.Data.Header.Version</td>
+                <td style="width: 25%;" class="right padding-right-0">UVCI @Model.Vds.Data.Message.UVCI</td>
+            </tr>
+        </table>
+    </div>
+
+    <p class="sr-only">
+        Sample Government
+        International COVID-19 Vaccination Certificate
+        Proof of Vaccination
+        Issued by @(Model.Vds.Data.Header.IssuingCountry)
+        Version @(Model.Vds.Data.Header.Version)
+        Unique Vaccination Certificate Identifier @(Model.Vds.Data.Message.UVCI)
+    </p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-5 padding-left-0 padding-30">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="data:image/png;base64, @Convert.ToBase64String(Model.Barcode.Bytes)" style="width: 100%;" alt="Image of QR barcode containing vaccination details" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 center">
+                        <span>Protect the QR code from marks and damage</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 padding-top-30">
+                <div>
+                    <div class="row">
+                        <div class="col-4 padding-top-2">Name of the holder:</div>
+                        <div class="col-8 personal-details value">@(ViewBag?.HolderNameForDisplay ?? Model.Vds.Data.Message.PersonIdentification.Name) </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 padding-top-2">Date of birth:</div>
+                        <div class="col-8 personal-details value">@Model.Vds.Data.Message.PersonIdentification.DateOfBirth</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 padding-top-2">Sex:</div>
+                        <div class="col-8 personal-details value">@Model.Vds.Data.Message.PersonIdentification.Sex</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 padding-top-2">Passport number:</div>
+                        <div class="col-8 personal-details value">@Model.Vds.Data.Message.PersonIdentification.UniqueIdentifier</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <p class="text">
+                            <br />
+                            <strong>Visible Digital Seal (VDS-NC)</strong>
+                            <br />
+                            Authorities can verify that this document is true and unaltered with a QR reader that checks against Australia's
+                            ePassport Country Signing Certificate Authority public key.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (ViewBag.IsTruncated != null && (bool.TryParse((string)ViewBag.IsTruncated.ToString(), out bool hasTruncatedDoses) && hasTruncatedDoses))
+        {
+            <div class="table-header warning-box" style="vertical-align: top;">
+                <img class="warning-icon" src="data:image/svg+xml,<svg class='icon' style='width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M511.80199 64.075341c-247.731174 0-448.606181 200.845331-448.606181 448.606181 0 247.741407 200.875007 448.607204 448.606181 448.607204 247.77006 0 448.606181-200.865797 448.606181-448.607204C960.407148 264.921695 759.571027 64.075341 511.80199 64.075341zM452.488093 292.207132c0-0.237407 0-0.590448 0-1.057075 0-13.571087 4.305049-25.980721 12.989849-37.219693 8.647961-11.228739 22.13309-17.561981 40.380686-18.961864l0-0.704035c20.609387-0.933255 36.152385 4.799306 46.704718 17.20894 10.514471 12.409634 15.809057 26.332738 15.809057 41.789779 0 0.466628 0 0.818645 0 1.047866 0 0.237407 0 0.599657 0 1.046842 0 13.59053-4.495384 25.980721-13.370519 37.227879-8.876158 11.237949-22.475897 17.552771-40.723493 18.952654-20.114107 1.409093-35.46677-4.075829-45.99966-16.495696-10.532891-12.400425-15.790638-26.332738-15.790638-41.780569C452.488093 292.797579 452.488093 292.445562 452.488093 292.207132zM555.381531 773.261329c-10.552334 11.028171-23.543206 17.009396-39.009456 17.904789-16.381086 0.456395-30.780027-5.123694-43.161009-16.838503-12.418844-11.713786-18.628266-25.732058-18.628266-42.151006l0-0.666172 1.409093-272.52179c0-15.914458 5.714142-29.247114 17.219173-40.028669 11.428284-10.751878 25.142633-16.142655 41.066301-16.142655 14.97097 0 28.114314 5.037736 39.352263 15.09479 11.236925 10.076496 16.83748 22.828938 16.83748 38.275745l0.685615 276.69381C571.15375 748.842173 565.934888 762.28944 555.381531 773.261329z' /></svg>" />
+                <p class="warning-text">This certificate only records the most recent @ViewBag.TruncatedDoseCount of the holder's @ViewBag.OriginalDoseCount vaccinations</p>
+            </div>
+        }
+        @foreach (var vaccinationEvent in Model.Vds.Data.Message.VaccinationEvents)
+        {
+            <div class="padding-bottom-10" style="page-break-inside: avoid">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="5" class="table-header">
+                                <div class="row">
+                                    <div class="col-12 padding-bottom-0"><span class="vaccination-event-heading">VACCINATION EVENT</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 padding-top-0">
+                                        Vaccine or prophylaxis:
+                                        <div>
+                                            <span class="value">
+                                                @vaccinationEvent.VaccineOrProphylaxis
+                                            </span>
+                                            (COVID-19)
+                                        </div>
+                                    </div>
+                                    <div class="col-4 padding-top-0">
+                                        Vaccine brand:
+                                        <div class="value">
+                                            @vaccinationEvent.VaccineBrand
+                                        </div>
+                                    </div>
+                                    <div class="col-4 padding-top-0">
+                                        Disease or agent targeted:
+                                        <div>
+                                            <span class="value">
+                                                @vaccinationEvent.DiseaseOrAgentTargeted
+                                            </span>
+                                            (COVID-19)
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="padding-right-0">Date of vaccination:</th>
+                            <th class="padding-right-0">Dose number:</th>
+                            <th class="padding-right-0">Country of vaccination:</th>
+                            <th class="padding-right-0">Administering centre:</th>
+                            <th class="padding-right-0">Vaccine batch number:</th>
+                        </tr>
+                    </thead>
+                    @foreach (var vaccination in vaccinationEvent.VaccinationDetails)
+                    {
+                        <tr>
+                            <td class="value">
+                                @vaccination.DateOfVaccination
+                            </td>
+                            <td class="value">
+                                @vaccination.DoseNumber
+                            </td>
+                            <td class="value">
+                                @vaccination.CountryOfVaccination
+                            </td>
+                            <td class="value">
+                                @vaccination.AdministeringCentre
+                            </td>
+                            <td class="value">
+                                @vaccination.VaccineBatchNumber
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <div class="row">
+            <div class="col-12">
+                <div class="no-break">
+                    <p class="text">
+                        This document bears a Visible Digital Seal for a Non-Constrained Environment (VDS-NC), as specified by the International<br />
+                        Civil Aviation Organization. UVCI means 'Unique Vaccination Certificate Identifier', XM68M6 and RA01.0 are World Health<br />
+                        Organization codes for COVID-19.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<head>
+    <title>International COVID-19 Vaccination Certificate</title>
+    <style>
+        .warning-icon {
+            width: 2em;
+            float: left;
+            margin: 5px 10px;
+            display: inline-block;
+        }
+
+        .warning-text {
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            margin-bottom: 10px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        * {
+            font-family: Helvetica;
+            font-size: 12px;
+        }
+
+        .no-break {
+            page-break-inside: avoid !important;
+        }
+
+        #first-page-header {
+            position: running(first-page-header);
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        @@page {
+            margin-top: 300pt;
+            margin-right: 38pt;
+            margin-bottom: 40pt;
+            margin-left: 38pt;
+
+            @@bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+            }
+        }
+
+        @@page:first {
+            margin-top: 260pt;
+
+            @@top-center {
+                content: element(first-page-header);
+            }
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #bdbdbd;
+        }
+
+        .value {
+            font-weight: bold;
+            overflow-wrap: break-word;
+        }
+
+        .table-header {
+            background-color: #e7e7e7;
+            border: 1px solid #bdbdbd;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+            .table-header * {
+                line-height: 1.2 !important;
+            }
+
+            .table-header .row [class^="col"] {
+                padding: 5px 10px;
+            }
+
+        table {
+            width: 100%;
+            border: 1px solid #bdbdbd;
+            border-collapse: collapse;
+        }
+
+            table th {
+                text-align: left;
+                border-bottom: 0;
+            }
+
+            table th, table td {
+                padding: 5px 10px;
+                line-height: 1.2;
+            }
+
+        .padding-30 {
+            padding: 30px !important;
+        }
+
+        .padding-top-0 {
+            padding-top: 0 !important;
+        }
+
+        .padding-bottom-0 {
+            padding-bottom: 0 !important;
+        }
+
+        .padding-bottom-5 {
+            padding-bottom: 5px !important;
+        }
+
+        .padding-top-2 {
+            padding-top: 2px !important;
+        }
+
+        .padding-left-0 {
+            padding-left: 0 !important;
+        }
+
+        .padding-right-0 {
+            padding-right: 0 !important;
+        }
+
+        .padding-top-20 {
+            padding-top: 20px !important;
+        }
+
+        .padding-top-30 {
+            padding-top: 30px !important;
+        }
+
+        .padding-bottom-10 {
+            padding-bottom: 10px !important;
+        }
+
+        .personal-details {
+            font-size: 16px;
+        }
+
+        .text {
+            line-height: 1;
+            margin: 0;
+        }
+
+        .vaccination-event-heading {
+            font-size: 10px;
+            padding-bottom: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .coat-of-arms {
+            margin-bottom: 30px;
+            width: 30%;
+        }
+
+        .header-table {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        .holder-name-header-table {
+            text-align: left;
+            border: 0;
+        }
+
+            .holder-name-header-table .first-td {
+                padding-left: 0;
+                padding-top: 7px;
+                vertical-align: top;
+                width: 20%;
+            }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            left: 0;
+            top: 0;
+        }
+
+        * {
+            font-family: Helvetica, sans-serif;
+            color: #333447;
+            line-height: 1.5;
+            font-weight: 200;
+            box-sizing: border-box;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .row {
+            position: relative;
+            width: 100%;
+        }
+
+            .row [class^="col"] {
+                float: left;
+                min-height: 0.125rem;
+                padding: 10px;
+            }
+
+                .row [class^="col"] [class^="col"] {
+                    padding: 0;
+                }
+
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+    </style>
+</head>
+</html>
