@@ -73,7 +73,7 @@ public class Startup
     }
 }
 ```
-> For a detailed example of individually registering or instantiating all services, see: [1.5 Service Registration](//todo //todo //todo //todo ).  
+> For a detailed example of individually registering or instantiating all services, see: [1.5 Service Registration](./Docs/1.5.ServiceRegistration.md).  
 > This section also details the services to create if you are constructing services without dependency injection.
 
 > **Note:** This example uses the `DemoSigningService`. This is provided to allow a test VDS-NC to be created while a signing service is designed. But cannot be used in production. More information on signing is provided after this example.
